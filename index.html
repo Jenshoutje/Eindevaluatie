@@ -3,89 +3,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Supervisiereis Jens Houthuijsen</title>
+  <title>De Reis van het Schildpadje</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <style>
-    .path {
-      width: 4px;
-      background: linear-gradient(to bottom, #4ade80, #2563eb);
-      margin: 0 auto;
-    }
-    .bubble {
-      background-color: #d1fae5;
-      border: 2px solid #10b981;
-      border-radius: 9999px;
-      padding: 1rem;
-      margin: 2rem;
-      width: 300px;
-      box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
-    }
-    .bubble-inner {
-      font-size: 0.9rem;
-      color: #065f46;
+    body {
+      background: linear-gradient(#e0f2f1, #fff3e0);
+      font-family: 'Open Sans', sans-serif;
+      overflow-x: hidden;
     }
     .turtle {
-      animation: moveTurtle 10s infinite linear;
+      position: fixed;
+      top: 20vh;
+      left: 5vw;
       width: 80px;
+      z-index: 50;
     }
-    @keyframes moveTurtle {
-      0% { transform: translateX(0); }
-      50% { transform: translateX(50vw); }
-      100% { transform: translateX(0); }
+    section {
+      min-height: 100vh;
+      padding: 6rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .section-title {
+      font-family: 'Merriweather', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #004d40;
+      text-align: center;
+    }
+    .section-text {
+      max-width: 750px;
+      font-size: 1.2rem;
+      color: #37474f;
+      text-align: center;
+      line-height: 1.7;
     }
   </style>
 </head>
-<body class="bg-green-50 min-h-screen flex flex-col items-center">
+<body>
 
-  <header class="text-center my-8">
-    <h1 class="text-4xl font-bold text-green-700">De reis van het schildpadje</h1>
-    <p class="text-lg mt-2 text-green-600">Supervisiereis van Jens Houthuijsen - 2025</p>
+  <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Schildpadje" class="turtle" id="turtle">
+
+  <header class="text-center p-12">
+    <h1 class="text-5xl font-bold text-green-700">Mijn Supervisiereis</h1>
+    <p class="mt-4 text-green-600 text-xl">De weg van het Schildpadje</p>
   </header>
 
-  <main class="flex flex-col items-center">
-    <img src="https://tse3.mm.bing.net/th?id=OIP.n45dDK1QjygUbzbLoJzFGAAAAA&pid=Api" alt="Schildpadje" class="turtle mb-8">
+  <main>
+    <section class="bg-green-100">
+      <h2 class="section-title">Start van de Reis</h2>
+      <p class="section-text">Langzaam maar zeker kwam ik uit mijn schild. De eerste stappen in supervisie waren spannend, maar essentieel voor mijn groei. (Korthagen: Ervaring)</p>
+    </section>
 
-    <div class="path h-96"></div>
+    <section class="bg-blue-100">
+      <h2 class="section-title">Reflectie en Terugblik</h2>
+      <p class="section-text">Door terug te kijken op mijn handelen leerde ik patronen herkennen. Soms was dit confronterend, maar het bracht bewustzijn. (Korthagen: Terugblikken)</p>
+    </section>
 
-    <div class="bubble">
-      <h2 class="font-bold text-green-800">Start: Eerste bijeenkomsten</h2>
-      <p class="bubble-inner">Aftasten. Voorzichtig uit mijn schild komen. Leren delen in een nieuwe groep.</p>
-    </div>
+    <section class="bg-green-200">
+      <h2 class="section-title">Inzicht en Invloed</h2>
+      <p class="section-text">Ik ontdekte de kracht van het richten op mijn eigen cirkel van invloed. Wat buiten mijn controle lag, kon ik leren loslaten. (Covey: Cirkel van Invloed)</p>
+    </section>
 
-    <div class="path h-48"></div>
+    <section class="bg-blue-200">
+      <h2 class="section-title">Perspectieven Ontdekken</h2>
+      <p class="section-text">Door situaties vanuit meerdere perspectieven te bekijken, groeide mijn empathie en flexibiliteit als toekomstig sociaal werker. (Multiperspectiviteit)</p>
+    </section>
 
-    <div class="bubble">
-      <h2 class="font-bold text-green-800">Spanning: Oxazepam-casus</h2>
-      <p class="bubble-inner">Loyaliteit en verantwoordelijkheid botsen. Mijn grens voelen, maar ook professioneel blijven.</p>
-    </div>
-
-    <div class="path h-48"></div>
-
-    <div class="bubble">
-      <h2 class="font-bold text-green-800">Zelfreflectie: Informatie delen</h2>
-      <p class="bubble-inner">Spanning bij kritiek. Geleerd om achter mijn keuzes te staan, zonder vingerwijzen.</p>
-    </div>
-
-    <div class="path h-48"></div>
-
-    <div class="bubble">
-      <h2 class="font-bold text-green-800">Groei: Grip op tijd</h2>
-      <p class="bubble-inner">Inzien dat geluk niet zit in drukte of doelen, maar in bewust beleven van de reis.</p>
-    </div>
-
-    <div class="path h-48"></div>
-
-    <div class="bubble">
-      <h2 class="font-bold text-green-800">Toekomst: Als sociaal werker</h2>
-      <p class="bubble-inner">Bewust van mijn kracht, grenzen en kwetsbaarheid. Klaar voor de volgende stap.</p>
-    </div>
-
+    <section class="bg-green-300">
+      <h2 class="section-title">Toepassing en Groei</h2>
+      <p class="section-text">Mijn reis eindigt niet hier. De inzichten en vaardigheden die ik onderweg heb opgedaan, neem ik mee in mijn professionele toekomst.</p>
+    </section>
   </main>
 
-  <footer class="mt-16 text-center text-green-700">
-    <p class="mb-2">"Vandaag wandel ik deze laatste meters op afstand. Maar mijn pad was niet minder echt."</p>
-    <p class="text-sm">Gemaakt met trots en groei - Jens Houthuijsen, 2025</p>
+  <footer class="text-center p-8 bg-green-700 text-white">
+    <p>© 2025 Jens Houthuijsen - Supervisie Portfolio</p>
   </footer>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to("#turtle", {
+      scrollTrigger: {
+        trigger: "main",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: true
+      },
+      y: "80vh",
+      ease: "power1.out"
+    });
+  </script>
 
 </body>
 </html>
