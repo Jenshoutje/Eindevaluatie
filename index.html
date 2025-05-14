@@ -9,20 +9,25 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <style>
     body {
-      background: linear-gradient(#e0f2f1, #fff3e0);
+      background: linear-gradient(#e0f7fa, #ffe0b2);
       font-family: 'Open Sans', sans-serif;
       overflow-x: hidden;
+      scroll-behavior: smooth;
     }
     .turtle {
       position: fixed;
-      top: 20vh;
+      top: 10vh;
       left: 5vw;
       width: 80px;
       z-index: 50;
+      transition: transform 0.3s ease;
     }
     section {
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
       min-height: 100vh;
-      padding: 6rem 2rem;
+      padding: 8rem 2rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -30,51 +35,97 @@
     }
     .section-title {
       font-family: 'Merriweather', serif;
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: #004d40;
+      font-size: 2.75rem;
+      margin-bottom: 1.5rem;
+      color: #00695c;
       text-align: center;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
     }
     .section-text {
-      max-width: 750px;
+      max-width: 800px;
       font-size: 1.2rem;
       color: #37474f;
       text-align: center;
-      line-height: 1.7;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      line-height: 1.8;
+    }
+    header {
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #ffffff;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    header h1 {
+      font-size: 3.5rem;
+      font-weight: bold;
+    }
+    header p {
+      margin-top: 1rem;
+      font-size: 1.5rem;
+    }
+    nav a {
+      transition: all 0.3s ease;
+    }
+    nav a:hover {
+      color: #004d40;
+      text-decoration: underline;
+    }
+    footer {
+      font-size: 1rem;
     }
   </style>
 </head>
 <body>
 
+  <!-- Sticky Navbar -->
+  <nav class="fixed top-0 left-0 w-full bg-white/70 backdrop-blur-md shadow-md z-50">
+    <div class="flex justify-center space-x-8 py-3">
+      <a href="#start" class="text-green-700 font-semibold">Start</a>
+      <a href="#reflectie" class="text-green-700 font-semibold">Reflectie</a>
+      <a href="#inzicht" class="text-green-700 font-semibold">Inzicht</a>
+      <a href="#perspectief" class="text-green-700 font-semibold">Perspectief</a>
+      <a href="#groei" class="text-green-700 font-semibold">Groei</a>
+    </div>
+  </nav>
+
+  <!-- Schildpad -->
   <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Schildpadje" class="turtle" id="turtle">
 
-  <header class="text-center p-12">
-    <h1 class="text-5xl font-bold text-green-700">Mijn Supervisiereis</h1>
-    <p class="mt-4 text-green-600 text-xl">De weg van het Schildpadje</p>
+  <!-- Header -->
+  <header>
+    <h1>Mijn Supervisiereis</h1>
+    <p>De weg van het Schildpadje</p>
   </header>
 
   <main>
-    <section class="bg-green-100">
+    <section id="start" class="bg-green-100">
       <h2 class="section-title">Start van de Reis</h2>
       <p class="section-text">Langzaam maar zeker kwam ik uit mijn schild. De eerste stappen in supervisie waren spannend, maar essentieel voor mijn groei. (Korthagen: Ervaring)</p>
     </section>
 
-    <section class="bg-blue-100">
+    <section id="reflectie" class="bg-blue-100">
       <h2 class="section-title">Reflectie en Terugblik</h2>
       <p class="section-text">Door terug te kijken op mijn handelen leerde ik patronen herkennen. Soms was dit confronterend, maar het bracht bewustzijn. (Korthagen: Terugblikken)</p>
     </section>
 
-    <section class="bg-green-200">
+    <section id="inzicht" class="bg-green-200">
       <h2 class="section-title">Inzicht en Invloed</h2>
       <p class="section-text">Ik ontdekte de kracht van het richten op mijn eigen cirkel van invloed. Wat buiten mijn controle lag, kon ik leren loslaten. (Covey: Cirkel van Invloed)</p>
     </section>
 
-    <section class="bg-blue-200">
+    <section id="perspectief" class="bg-blue-200">
       <h2 class="section-title">Perspectieven Ontdekken</h2>
       <p class="section-text">Door situaties vanuit meerdere perspectieven te bekijken, groeide mijn empathie en flexibiliteit als toekomstig sociaal werker. (Multiperspectiviteit)</p>
     </section>
 
-    <section class="bg-green-300">
+    <section id="groei" class="bg-green-300">
       <h2 class="section-title">Toepassing en Groei</h2>
       <p class="section-text">Mijn reis eindigt niet hier. De inzichten en vaardigheden die ik onderweg heb opgedaan, neem ik mee in mijn professionele toekomst.</p>
     </section>
@@ -87,6 +138,7 @@
   <script>
     gsap.registerPlugin(ScrollTrigger);
 
+    // Schildpad animatie
     gsap.to("#turtle", {
       scrollTrigger: {
         trigger: "main",
@@ -95,7 +147,25 @@
         scrub: true
       },
       y: "80vh",
-      ease: "power1.out"
+      rotation: 10,
+      ease: "power1.inOut",
+      yoyo: true,
+      repeat: -1,
+      duration: 1.5
+    });
+
+    // Fade-in animaties
+    gsap.utils.toArray("section").forEach(section => {
+      gsap.from(section, {
+        scrollTrigger: {
+          trigger: section,
+          start: "top 80%",
+          toggleActions: "play none none reverse"
+        },
+        opacity: 0,
+        y: 50,
+        duration: 1
+      });
     });
   </script>
 
