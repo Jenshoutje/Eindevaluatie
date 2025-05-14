@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supervisiereis Jens Houthuijsen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .path {
+      width: 4px;
+      background: linear-gradient(to bottom, #4ade80, #2563eb);
+      margin: 0 auto;
+    }
+    .bubble {
+      background-color: #d1fae5;
+      border: 2px solid #10b981;
+      border-radius: 9999px;
+      padding: 1rem;
+      margin: 2rem;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+    }
+    .bubble-inner {
+      font-size: 0.9rem;
+      color: #065f46;
+    }
+    .turtle {
+      animation: moveTurtle 10s infinite linear;
+      width: 80px;
+    }
+    @keyframes moveTurtle {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(50vw); }
+      100% { transform: translateX(0); }
+    }
+  </style>
+</head>
+<body class="bg-green-50 min-h-screen flex flex-col items-center">
+
+  <header class="text-center my-8">
+    <h1 class="text-4xl font-bold text-green-700">De reis van het schildpadje</h1>
+    <p class="text-lg mt-2 text-green-600">Supervisiereis van Jens Houthuijsen - 2025</p>
+  </header>
+
+  <main class="flex flex-col items-center">
+    <img src="https://tse3.mm.bing.net/th?id=OIP.n45dDK1QjygUbzbLoJzFGAAAAA&pid=Api" alt="Schildpadje" class="turtle mb-8">
+
+    <div class="path h-96"></div>
+
+    <div class="bubble">
+      <h2 class="font-bold text-green-800">Start: Eerste bijeenkomsten</h2>
+      <p class="bubble-inner">Aftasten. Voorzichtig uit mijn schild komen. Leren delen in een nieuwe groep.</p>
+    </div>
+
+    <div class="path h-48"></div>
+
+    <div class="bubble">
+      <h2 class="font-bold text-green-800">Spanning: Oxazepam-casus</h2>
+      <p class="bubble-inner">Loyaliteit en verantwoordelijkheid botsen. Mijn grens voelen, maar ook professioneel blijven.</p>
+    </div>
+
+    <div class="path h-48"></div>
+
+    <div class="bubble">
+      <h2 class="font-bold text-green-800">Zelfreflectie: Informatie delen</h2>
+      <p class="bubble-inner">Spanning bij kritiek. Geleerd om achter mijn keuzes te staan, zonder vingerwijzen.</p>
+    </div>
+
+    <div class="path h-48"></div>
+
+    <div class="bubble">
+      <h2 class="font-bold text-green-800">Groei: Grip op tijd</h2>
+      <p class="bubble-inner">Inzien dat geluk niet zit in drukte of doelen, maar in bewust beleven van de reis.</p>
+    </div>
+
+    <div class="path h-48"></div>
+
+    <div class="bubble">
+      <h2 class="font-bold text-green-800">Toekomst: Als sociaal werker</h2>
+      <p class="bubble-inner">Bewust van mijn kracht, grenzen en kwetsbaarheid. Klaar voor de volgende stap.</p>
+    </div>
+
+  </main>
+
+  <footer class="mt-16 text-center text-green-700">
+    <p class="mb-2">"Vandaag wandel ik deze laatste meters op afstand. Maar mijn pad was niet minder echt."</p>
+    <p class="text-sm">Gemaakt met trots en groei - Jens Houthuijsen, 2025</p>
+  </footer>
+
+</body>
+</html>
